@@ -7,6 +7,6 @@ module.exports = {
      uri: 'mysql://root:1qa2ws3edRD!@localhost:3306/physician'
 	},
 	// Seed database on startup
-  seedDB: true
+  seedDB: false
 
 };
