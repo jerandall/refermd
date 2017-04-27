@@ -4,9 +4,9 @@
 // ==================================
 module.exports = {
 	mysql: {
-     uri: 'mysql://root:Mehta@5418@localhost:3306/physician'
+     uri: 'mysql://root:1qa2ws3edRD!@localhost:3306/physician'
 	},
 	// Seed database on startup
-  seedDB: false
+  seedDB: true
 
 };
