@@ -23,7 +23,7 @@ class LoginController {
       })
         .then((user) => {
           // Logged in, redirect to home
-          if (user && (user.role === "physician" || user && (user.role === "practice" || user.role === "admin")) {
+          if (user && (user.role === "physician" || user.role === "practice" || user.role === "admin")) {
             this.$state.go('dashboard');
           }
           else { this.$state.go('appointment'); }
