@@ -1,15 +1,15 @@
 /**
- * Appointment model events
+ * Referral model events
  */
 
 'use strict';
 
 import {EventEmitter} from 'events';
-var Appointment = require('../../sqldb').Appointment;
-var AppointmentEvents = new EventEmitter();
+var Referral = require('../../sqldb').Referral;
+var ReferralEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-AppointmentEvents.setMaxListeners(0);
+ReferralEvents.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -21,15 +21,15 @@ var events = {
 // Register the event emitter to the model events
 for (var e in events) {
   var event = events[e];
-  Appointment.hook(e, emitEvent(event));
+  Referral.hook(e, emitEvent(event));
 }
 
 function emitEvent(event) {
   return function(doc, options, done) {
-    AppointmentEvents.emit(event + ':' + doc._id, doc);
-    AppointmentEvents.emit(event, doc);
+    ReferralEvents.emit(event + ':' + doc._id, doc);
+    ReferralEvents.emit(event, doc);
     done(null);
   }
 }
 
-export default AppointmentEvents;
+export default ReferralEvents;

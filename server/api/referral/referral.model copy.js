@@ -1,7 +1,7 @@
 'use strict';
 
 export default function(sequelize, DataTypes) {
-	return sequelize.define('Appointment', {
+	return sequelize.define('Referral', {
 			_id: {
 				type: DataTypes.INTEGER,
 				allowNull: false,

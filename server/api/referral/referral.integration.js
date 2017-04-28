@@ -3,40 +3,40 @@
 var app = require('../..');
 import request from 'supertest';
 
-var newReferral;
+var newAppointment;
 
-describe('Referral API:', function() {
+describe('Appointment API:', function() {
 
-  describe('GET /api/referrals', function() {
-    var referrals;
+  describe('GET /api/appointments', function() {
+    var appointments;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/referrals')
+        .get('/api/appointments')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
           if (err) {
             return done(err);
           }
-          referrals = res.body;
+          appointments = res.body;
           done();
         });
     });
 
     it('should respond with JSON array', function() {
-      referrals.should.be.instanceOf(Array);
+      appointments.should.be.instanceOf(Array);
     });
 
   });
 
-  describe('POST /api/referrals', function() {
+  describe('POST /api/appointments', function() {
     beforeEach(function(done) {
       request(app)
-        .post('/api/referrals')
+        .post('/api/appointments')
         .send({
-          name: 'New Referral',
-          info: 'This is the brand new referral!!!'
+          name: 'New Appointment',
+          info: 'This is the brand new appointment!!!'
         })
         .expect(201)
         .expect('Content-Type', /json/)
@@ -44,55 +44,55 @@ describe('Referral API:', function() {
           if (err) {
             return done(err);
           }
-          newReferrals = res.body;
+          newAppointment = res.body;
           done();
         });
     });
 
-    it('should respond with the newly created referral', function() {
-      newReferral.name.should.equal('New Referral');
-      newReferral.info.should.equal('This is the brand new referral!!!');
+    it('should respond with the newly created appointment', function() {
+      newAppointment.name.should.equal('New Appointment');
+      newAppointment.info.should.equal('This is the brand new appointment!!!');
     });
 
   });
 
-  describe('GET /api/referrals/:id', function() {
-    var referral;
+  describe('GET /api/appointments/:id', function() {
+    var appointment;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/referrals/' + newReferral._id)
+        .get('/api/appointments/' + newAppointment._id)
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
           if (err) {
             return done(err);
           }
-          referral = res.body;
+          appointment = res.body;
           done();
         });
     });
 
     afterEach(function() {
-      referral = {};
+      appointment = {};
     });
 
-    it('should respond with the requested referral', function() {
-      referral.name.should.equal('New Referral');
-      referral.info.should.equal('This is the brand new referral!!!');
+    it('should respond with the requested appointment', function() {
+      appointment.name.should.equal('New Appointment');
+      appointment.info.should.equal('This is the brand new appointment!!!');
     });
 
   });
 
-  describe('PUT /api/referrals/:id', function() {
-    var updatedReferral;
+  describe('PUT /api/appointments/:id', function() {
+    var updatedAppointment;
 
     beforeEach(function(done) {
       request(app)
-        .put('/api/referrals/' + newReferral._id)
+        .put('/api/appointments/' + newAppointment._id)
         .send({
-          name: 'Updated Referral',
-          info: 'This is the updated referral!!!'
+          name: 'Updated Appointment',
+          info: 'This is the updated appointment!!!'
         })
         .expect(200)
         .expect('Content-Type', /json/)
@@ -100,27 +100,27 @@ describe('Referral API:', function() {
           if (err) {
             return done(err);
           }
-          updatedReferral = res.body;
+          updatedAppointment = res.body;
           done();
         });
     });
 
     afterEach(function() {
-      updatedReferral = {};
+      updatedAppointment = {};
     });
 
-    it('should respond with the updated referral', function() {
-      updatedReferral.name.should.equal('Updated Referral');
-      updatedReferral.info.should.equal('This is the updated referral!!!');
+    it('should respond with the updated appointment', function() {
+      updatedAppointment.name.should.equal('Updated Appointment');
+      updatedAppointment.info.should.equal('This is the updated appointment!!!');
     });
 
   });
 
-  describe('DELETE /api/referrals/:id', function() {
+  describe('DELETE /api/appointments/:id', function() {
 
     it('should respond with 204 on successful removal', function(done) {
       request(app)
-        .delete('/api/referrals/' + newReferral._id)
+        .delete('/api/appointments/' + newAppointment._id)
         .expect(204)
         .end((err, res) => {
           if (err) {
@@ -130,9 +130,9 @@ describe('Referral API:', function() {
         });
     });
 
-    it('should respond with 404 when referral does not exist', function(done) {
+    it('should respond with 404 when appointment does not exist', function(done) {
       request(app)
-        .delete('/api/referrals/' + newReferral._id)
+        .delete('/api/appointments/' + newAppointment._id)
         .expect(404)
         .end((err, res) => {
           if (err) {
