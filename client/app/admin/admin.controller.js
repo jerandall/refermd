@@ -3,17 +3,17 @@
 (function() {
 
 class AdminController {
-  constructor(User, ReferralService, Auth,socket) {
+  constructor(User, AppointmentService, Auth,socket) {
     var vm = this;
     vm.getCurrentUser = Auth.getCurrentUser;
-    vm.referrals = [];
+    vm.appointments = [];
     vm.user = vm.getCurrentUser();
     console.log(vm.getCurrentUser())
-    ReferralService.byDocId.query({
+    AppointmentService.byDocId.query({
       docId: vm.getCurrentUser()._id
     }).$promise.then(function(response) {
-      vm.referrals = response;
-      socket.syncUpdates('referral', vm.referrals);
+      vm.appointments = response;
+      socket.syncUpdates('appointment', vm.appointments);
     });
 
   }
