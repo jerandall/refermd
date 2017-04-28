@@ -13,8 +13,6 @@ router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);
 router.get('/physicians', auth.isAuthenticated(), controller.getPhysicians);
 router.get('/physicians/all', auth.isAuthenticated(), controller.getPhysiciansData);
-router.get('/practices', auth.isAuthenticated(), controller.getPractices);
-router.get('/practices/all', auth.isAuthenticated(), controller.getPracticesData);
 router.get('/patients', auth.isAuthenticated(), controller.getPatients);
 
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
