@@ -153,6 +153,35 @@ export function getPhysiciansData(req, res) {
 		})
 		.catch(handleError(res));
 }
+
+export function getPhysiciansData(req, res) {
+	User.findAll({
+		where: {
+			"role": "physician"
+		},
+		attributes: [
+			'_id',
+			'first_name',
+			'last_name',
+			'email',
+			'npi',
+			'mobile'
+		],
+		include: [{
+			model: Referral,
+			attributes: ['title', 'start', 'end', '_id'],
+			include: [{
+				model: User,
+				as: 'Patient',
+				attributes: ['first_name', 'last_name', 'email', 'mobile', 'gender', '_id']
+			}]
+		}]
+	})
+		.then(users => {
+			res.status(200).json(users);
+		})
+		.catch(handleError(res));
+}
 export function getPatients(req, res) {
 	User.findAll({
 		where: {
