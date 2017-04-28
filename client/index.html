@@ -29,6 +29,7 @@
       <link rel="stylesheet" href="app/admin/admin.css">
       <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/appointment/appointment.css">
+      <link rel="stylesheet" href="app/referral/referral.css">
       <link rel="stylesheet" href="app/guide/doc.css">
       <link rel="stylesheet" href="app/main/main.css">
       <link rel="stylesheet" href="app/patient/patient.css">
@@ -44,12 +45,12 @@
       <link rel="stylesheet" href="components/oauth-buttons/oauth-buttons.css">
       <!-- endinjector -->
     <!-- endbuild -->
-    
+
   </head>
   <body ng-app="eventx" ng-class="{'grey lighten-2':$state.current.name === 'login' || $state.current.name === 'signup'}">
     <!-- Start Page Loading -->
       <div id="loader-wrapper">
-          <div id="loader"></div>        
+          <div id="loader"></div>
           <div class="loader-section section-left"></div>
           <div class="loader-section section-right"></div>
       </div>
@@ -105,19 +106,19 @@
     <navbar></navbar>
     <!-- Add your site or application content here -->
      <!-- START WRAPPER -->
-    <div id="main" ng-if="$state.current.name !== 'login' 
+    <div id="main" ng-if="$state.current.name !== 'login'
     && $state.current.name !== 'signup'
     && $state.current.name !== 'forget'
     && $state.current.name !== 'reset'">
-        <!--<sidebar></sidebar>--> 
+        <!--<sidebar></sidebar>-->
       <div class="wrapper" ui-view=""></div>
     </div>
-    
+
     <div  ng-if="$state.current.name === 'login'" style="margin-top: 2%;" ui-view=""></div>
     <div  ng-if="$state.current.name === 'signup'" style="margin-top: 2%;" ui-view=""></div>
     <div  ng-if="$state.current.name === 'forget'" style="margin-top: 2%;" ui-view=""></div>
     <div  ng-if="$state.current.name === 'reset'" style="margin-top: 2%;" ui-view=""></div>
-    
+
     <!-- END WRAPPER -->
     <footer></footer>
 
@@ -132,8 +133,8 @@
       ga('send', 'pageview');
     </script>
     -->
-    
-        
+
+
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
@@ -181,6 +182,8 @@
       <script src="app/app.constant.js"></script>
       <script src="app/appointment/appointment.controller.js"></script>
       <script src="app/appointment/appointment.js"></script>
+       <script src="app/referral/referral.controller.js"></script>
+      <script src="app/referral/referral.js"></script>
       <script src="app/assets-custom.js"></script>
       <script src="app/dashboard/dashboard.controller.js"></script>
       <script src="app/dashboard/dashboard.js"></script>
