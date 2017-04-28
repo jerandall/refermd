@@ -12,7 +12,7 @@
     </li>
   </ul>
 </div>-->
- <section id="content">        
+ <section id="content">
 
         <!--start container-->
         <div class="container">
@@ -21,29 +21,33 @@
             <!-- profile-page-header -->
             <div id="profile-page-header" class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="assets/images/user-profile-bg.jpg" alt="user background">                    
+                    <img class="activator" src="assets/images/user-profile-bg.jpg" alt="user background">
                 </div>
                 <figure class="card-profile-image">
                     <img src="assets/images/18.jpg" alt="profile image" class="circle z-depth-2 responsive-img activator">
                 </figure>
                 <div class="card-content">
-                  <div class="row">                    
-                    <div class="col s3 offset-s2">                        
+                  <div class="row">
+                    <div class="col s3 offset-s2">
                         <h4 class="card-title grey-text text-darken-4">{{admin.user.first_name}} {{admin.user.last_name}}</h4>
-                        <p class="medium-small grey-text">{{admin.user.role}}</p>                        
+                        <p class="medium-small grey-text">{{admin.user.role}}</p>
                     </div>
                     <div class="col s2 center-align">
                         <h4 class="card-title grey-text text-darken-4">{{admin.appointments.length}}</h4>
-                        <p class="medium-small grey-text">Appointments</p>                        
+                        <p class="medium-small grey-text">Appointments</p>
+                    </div>
+                    <div class="col s2 center-align">
+                        <h4 class="card-title grey-text text-darken-4">{{admin.referrals.length}}</h4>
+                        <p class="medium-small grey-text">Referrals</p>
                     </div>
                     <div class="col s2 center-align">
                         <h4 class="card-title grey-text text-darken-4">6</h4>
-                        <p class="medium-small grey-text">Patients</p>                        
-                    </div>                    
+                        <p class="medium-small grey-text">Patients</p>
+                    </div>
                     <div class="col s2 center-align">
                         <h4 class="card-title grey-text text-darken-4">{{admin.user.createdAt | date:'MMM dd yyyy'}}</h4>
-                        <p class="medium-small grey-text">Member Since</p>                        
-                    </div>                    
+                        <p class="medium-small grey-text">Member Since</p>
+                    </div>
                     <div class="col s1 right-align">
                       <a class="btn-floating activator waves-effect waves-light darken-2 right">
                           <i class="mdi-action-perm-identity"></i>
@@ -58,7 +62,7 @@
                     </p>
 
                     <p>I am very supportive.</p>
-                    
+
                     <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> {{admin.user.mobile}}</p>
                     <p><i class="mdi-communication-email cyan-text text-darken-2"></i> {{admin.user.email}}</p>
                     <p><i class="mdi-navigation-check cyan-text text-darken-2"></i> {{admin.user.npi}}</p>
