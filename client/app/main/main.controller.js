@@ -52,7 +52,14 @@
 				});
 			}
 
-
+function getPhysician(physicianId) {
+				ReferralService.byDocId.query({
+					docId: physicianId
+				}).$promise.then(function (response) {
+					$scope.referrals = response;
+					socket.syncUpdates('referral', $scope.referrals);
+				});
+			}
 
 			function getPhysician(physicianId) {
 				AppointmentService.byDocId.query({
@@ -84,8 +91,8 @@
 					//socket.syncUpdates('appointment', vm.holidays);
 				});
 			}
-			
-			
+
+
 
 			function setShifts() {
 				var cnt = 1;
