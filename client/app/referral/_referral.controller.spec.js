@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: AppointmentCtrl', function () {
+describe('Controller: ReferralCtrl', function () {
 
   // load the controller's module
   beforeEach(module('eventx'));
 
-  var AppointmentCtrl, scope;
+  var ReferralCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AppointmentCtrl = $controller('AppointmentCtrl', {
+    ReferralCtrl = $controller('ReferralCtrl', {
       $scope: scope
     });
   }));

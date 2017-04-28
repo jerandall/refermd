@@ -2,13 +2,13 @@
 
 (function () {
 
-  class AppointmentCtrl {
+  class ReferralCtrl {
 
-    constructor($timeout, $rootScope, $state, $filter, socket, AppointmentService, Auth) {
+    constructor($timeout, $rootScope, $state, $filter, socket, ReferralService, Auth) {
       var vm = this;
-      this.appointments = [];
+      this.referrals = [];
       this.isAdmin = Auth.isAdmin;
-      this.AppointmentService = AppointmentService;
+      this.ReferralService = ReferralService;
       $rootScope.$state = $state;
       this.getCurrentUser = Auth.getCurrentUser;
       this.defaultMode = 'card'
@@ -18,43 +18,43 @@
 
 
       this.numberOfPages = function () {
-        var myFilteredData = $filter('daterange')(vm.appointments, vm.startDate, vm.endDate)
+        var myFilteredData = $filter('daterange')(vm.referrals, vm.startDate, vm.endDate)
         if (myFilteredData) {
           return Math.ceil(myFilteredData.length / vm.pageSize);
         } else {
-          return Math.ceil(vm.appointments.length / vm.pageSize);
+          return Math.ceil(vm.referrals.length / vm.pageSize);
         }
-        //return Math.ceil(vm.appointments.length / vm.pageSize);
+        //return Math.ceil(vm.referrals.length / vm.pageSize);
       };
 
       vm.getCurrentUser(function (user) {
         vm.currentUser = user;
-        vm.appointmentStatus = ['Awaiting', 'Cancel', 'Done'];
-        // get app the appointments of logged users - physician/patient
+        vm.referralStatus = ['Awaiting', 'Cancel', 'Done'];
+        // get app the referrals of logged users - physician/patient
         if (vm.currentUser.role === 'patient') {
-          AppointmentService.byPatientID.query({
+          ReferralService.byPatientID.query({
             patientId: vm.currentUser._id
           }).$promise.then(function (response) {
             console.log(response)
-            vm.appointments = response;
+            vm.referrals = response;
             vm.noRecords=response.length===0;
-            socket.syncUpdates('appointment', vm.appointments);
+            socket.syncUpdates('referral', vm.referrals);
           });
         }
         else if (vm.currentUser.role === 'physician') {
-          AppointmentService.byDocId.query({
+          ReferralService.byDocId.query({
             docId: vm.currentUser._id
           }).$promise.then(function (response) {
             console.log(response)
-            vm.appointments = response;
-            socket.syncUpdates('appointment', vm.appointments);
+            vm.referrals = response;
+            socket.syncUpdates('referral', vm.referrals);
           });
         }
         else {
-          AppointmentService.query().$promise.then(function (response) {
+          ReferralService.query().$promise.then(function (response) {
             console.log(response)
-            vm.appointments = response;
-            socket.syncUpdates('appointment', vm.appointments);
+            vm.referrals = response;
+            socket.syncUpdates('referral', vm.referrals);
           });
         }
 
@@ -69,16 +69,16 @@
       this.endDate = null;
     }
 
-    setAppointmentStatus(app) {
+    setReferralStatus(app) {
 
       if (app) {
         delete app.patient;
         delete app.physician;
 
-        this.AppointmentService.update({
+        this.ReferralService.update({
           id: app._id
         }, app).$promise.then(function () {
-          Materialize.toast('Appointment updated.', 2000, '', function () { });
+          Materialize.toast('Referral updated.', 2000, '', function () { });
         }, function (error) { // error handler
           if (error.data.errors) {
             var err = error.data.errors;
@@ -97,7 +97,7 @@
   }
 
   angular.module('eventx')
-    .controller('AppointmentCtrl', AppointmentCtrl)
+    .controller('ReferralCtrl', ReferralCtrl)
     .filter('UTCToNow', function () {
       return function (input, format) {
         return moment.utc(input).format('dddd, MMMM Do YYYY, h:mmA');
