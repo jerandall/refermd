@@ -44,7 +44,7 @@ describe('Referral API:', function() {
           if (err) {
             return done(err);
           }
-          newReferrals = res.body;
+          newReferral = res.body;
           done();
         });
     });

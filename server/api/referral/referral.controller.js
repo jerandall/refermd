@@ -87,7 +87,7 @@ export function index(req, res) {
 		.catch(handleError(res));
 }
 
-// Gets a list of Referral by docId
+// Gets a list of Referrals by docId
 export function byDocID(req, res) {
 	// console.log(req.params.docId);
 	Referral.findAll({
@@ -113,7 +113,7 @@ export function byDocID(req, res) {
 		.catch(handleError(res));
 }
 
-// Gets a list of Referral by patientId
+// Gets a list of Referrals by patientId
 export function byPatientID(req, res) {
 	Referral.findAll({
 			where: {
