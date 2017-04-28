@@ -84,7 +84,7 @@ describe('Referral API:', function() {
 
   });
 
-  describe('PUT /api/referras/:id', function() {
+  describe('PUT /api/referrals/:id', function() {
     var updatedReferral;
 
     beforeEach(function(done) {
@@ -106,21 +106,21 @@ describe('Referral API:', function() {
     });
 
     afterEach(function() {
-      updatedAppointment = {};
+      updatedReferral = {};
     });
 
-    it('should respond with the updated appointment', function() {
-      updatedAppointment.name.should.equal('Updated Appointment');
-      updatedAppointment.info.should.equal('This is the updated appointment!!!');
+    it('should respond with the updated referral', function() {
+      updatedReferral.name.should.equal('Updated Referral');
+      updatedReferral.info.should.equal('This is the updated referral!!!');
     });
 
   });
 
-  describe('DELETE /api/appointments/:id', function() {
+  describe('DELETE /api/referrals/:id', function() {
 
     it('should respond with 204 on successful removal', function(done) {
       request(app)
-        .delete('/api/appointments/' + newAppointment._id)
+        .delete('/api/referrals/' + newReferral._id)
         .expect(204)
         .end((err, res) => {
           if (err) {
@@ -130,9 +130,9 @@ describe('Referral API:', function() {
         });
     });
 
-    it('should respond with 404 when appointment does not exist', function(done) {
+    it('should respond with 404 when referral does not exist', function(done) {
       request(app)
-        .delete('/api/appointments/' + newAppointment._id)
+        .delete('/api/referrals/' + newReferral._id)
         .expect(404)
         .end((err, res) => {
           if (err) {

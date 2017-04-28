@@ -115,7 +115,7 @@ export function byDocID(req, res) {
 
 // Gets a list of Referral by patientId
 export function byPatientID(req, res) {
-	Appointment.findAll({
+	Referral.findAll({
 			where: {
 				patientId: req.params.patientId
 			},

@@ -2,7 +2,7 @@
 
 var proxyquire = require('proxyquire').noPreserveCache();
 
-var appointmentCtrlStub = {
+var referralCtrlStub = {
   index: 'referralCtrl.index',
   show: 'referralCtrl.show',
   create: 'referralCtrl.create',
@@ -56,7 +56,7 @@ describe('Referral API Router:', function() {
 
   describe('POST /api/referrals', function() {
 
-    it('should route to appointment.controller.create', function() {
+    it('should route to referral.controller.create', function() {
       routerStub.post
         .withArgs('/', 'referralCtrl.create')
         .should.have.been.calledOnce;
