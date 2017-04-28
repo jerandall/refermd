@@ -46,6 +46,22 @@
 				// },
 				isArray: true
 			},
+				getPractices: {
+				method: 'GET',
+				params: {
+					id: 'practices'
+				},
+				isArray: true
+			},
+			getPracticesData: {
+				url: '/api/users/practices/all',
+				method: 'GET',
+				// params: {
+				// 	id: 'practices',
+				// 	controller: 'all'
+				// },
+				isArray: true
+			},
 			setBusinesshours: {
 				url: 'api/settings/',
 				method: 'POST'
@@ -57,7 +73,7 @@
 				},
 				isArray: true
 			},
-			
+
 		});
 	}
 

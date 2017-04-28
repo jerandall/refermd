@@ -32,7 +32,7 @@
                 <div class="errorTxt1" ng-show="form.email.$error.required && vm.submitted" style="margin-left: 18%;"><div id="uname-error" class="error">Email address is required</div></div>
                 <!--<div class="errorTxt1" ng-show="form.email.$error.cemail && vm.submitted" style="margin-left: 18%;"><div id="uname-error" class="error">Please provide valid email</div></div>-->
               </div>
-              
+
               <div class="input-field col s6">
                 <i class="mdi-action-lock-outline prefix"></i>
                 <input id="password" name="password" type="password" class="validate" ng-model="vm.user.password" required>
@@ -47,10 +47,11 @@
                         <option value="" disabled selected>Select your profile</option>
                         <option value="patient">Patient</option>
                         <option value="physician">Physician</option>
+                        <option value="physician">Practice</option>
                       </select>
                 <label>Select Role*</label>
                 <div class="errorTxt1" ng-show="form.role.$error.required && vm.submitted" style="margin-left: 9%;"><div id="uname-error" class="error">Please select a role.</div></div>
-                
+
               </div>
             </div>
             <div class="row" ng-if="vm.user.role==='physician'">
@@ -91,7 +92,7 @@
                 <label for="zip">Pincode*</label>
               </div>
             </div>
-            
+
             <div class="row" ng-if="vm.user.role==='physician'">
               <div class="input-field col s6">
                 <i class="mdi-editor-mode-edit prefix"></i>
@@ -104,7 +105,7 @@
                 <label>Country</label>
               </div>
             </div>
-            
+
             <div class="row">
               <div class="input-field col s12 m4">
                 <button class="btn btn-inverse col s12" type="submit">Sign up
