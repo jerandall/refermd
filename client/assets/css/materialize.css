@@ -3640,11 +3640,11 @@ nav ul a span.badge {
 
 @font-face {
   font-family: "Material-Design-Icons";
-  src: 
-  url("../fonts/material-design-icons/Material-Design-Icons.eot?#iefix") format("embedded-opentype"), 
-  url("../fonts/material-design-icons/Material-Design-Icons.woff2") format("woff2"), 
-  url("../fonts/material-design-icons/Material-Design-Icons.woff") format("woff"), 
-  url("../fonts/material-design-icons/Material-Design-Icons.ttf") format("truetype"), 
+  src:
+  url("../fonts/material-design-icons/Material-Design-Icons.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/material-design-icons/Material-Design-Icons.woff2") format("woff2"),
+  url("../fonts/material-design-icons/Material-Design-Icons.woff") format("woff"),
+  url("../fonts/material-design-icons/Material-Design-Icons.ttf") format("truetype"),
   url("../fonts/material-design-icons/Material-Design-Icons.svg#Material-Design-Icons") format("svg");
   font-weight: normal;
   font-style: normal;
@@ -7801,27 +7801,27 @@ nav .input-field label.active {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), 
-       local('Roboto-Regular'), 
-       url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff) 
+  src: local('Roboto Regular'),
+       local('Roboto-Regular'),
+       url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff)
        format('woff');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), 
-       local('Roboto-Bold'), 
-       url(http://themes.googleusercontent.com/static/fonts/roboto/v11/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff) 
+  src: local('Roboto Bold'),
+       local('Roboto-Bold'),
+       url(http://themes.googleusercontent.com/static/fonts/roboto/v11/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff)
        format('woff');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 400;
-  src: local('Roboto Italic'), 
-       local('Roboto-Italic'), 
-       url(http://themes.googleusercontent.com/static/fonts/roboto/v11/1pO9eUAp8pSF8VnRTP3xnvesZW2xOQ-xsNqO47m55DA.woff) 
+  src: local('Roboto Italic'),
+       local('Roboto-Italic'),
+       url(http://themes.googleusercontent.com/static/fonts/roboto/v11/1pO9eUAp8pSF8VnRTP3xnvesZW2xOQ-xsNqO47m55DA.woff)
        format('woff');
 }
 
@@ -8209,7 +8209,7 @@ nav .input-field label.active {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #ff4081;
+  background-color: #c9585c;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: 0.2s ease-out;
@@ -8221,7 +8221,7 @@ nav .input-field label.active {
 }
 
 .btn:hover, .btn-large:hover {
-  background-color: #ff5a92;
+  background-color: #cc3030;
 }
 
 .btn-floating {
@@ -10729,7 +10729,7 @@ ul.side-nav.leftside-navigation li.active > a {
  */
 .picker__holder {
   width: 100%;
-  overflow:visible !important; 
+  overflow:visible !important;
   /*overflow-y:auto;*/
   -webkit-overflow-scrolling: touch;
 }
