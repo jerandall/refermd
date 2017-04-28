@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col col s4 m4 l4">
                     <img src="assets/images/profile.png" alt="" class="circle responsive-img valign profile-image">
-                    
+
                 </div>
                 <div class="col col s8 m8 l8">
                     <ul id="profile-dropdown" class="dropdown-content">
@@ -27,11 +27,13 @@
             </li>
             <li class="bold" ng-class="{active:$state.current.name === 'main'}"><a ui-sref="main" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calendar</a>
             </li>
-            <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Appointments</a>
+            <li class="bold" ng-class="{active:$state.current.name === 'referral'}"><a ui-sref="referral" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Referrals</a>
+            </li>
+             <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Appointments</a>
             </li>
             <li class="bold" ng-class="{active:$state.current.name === 'patient'}" ng-if="side.isAdmin() || side.getCurrentUser().role==='physician'"><a ui-sref="patient" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Patients</a>
             </li>
-            
+
             <li class="bold" ng-if="side.getCurrentUser().role==='admin'" ng-class="{active:$state.current.name === 'physician'}"><a ui-sref="physician" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Physicians</a>
             </li>
             <li class="bold" ng-if="side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'shifts'}"><a ui-sref="shifts" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Shifts</a>
@@ -42,7 +44,7 @@
             </li>
             <!--<li ng-show="side.isLoggedIn()"><a ui-sref="settings"><i class="mdi-action-settings"></i> Password</a>
             </li>-->
-            
+
         </ul>
         <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
         </aside>
