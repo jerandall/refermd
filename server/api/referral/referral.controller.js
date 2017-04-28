@@ -1,17 +1,17 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/appointments              ->  index
- * POST    /api/appointments              ->  create
- * GET     /api/appointments/:id          ->  show
- * PUT     /api/appointments/:id          ->  update
- * DELETE  /api/appointments/:id          ->  destroy
+ * GET     /api/referrals              ->  index
+ * POST    /api/referrals              ->  create
+ * GET     /api/referrals/:id          ->  show
+ * PUT     /api/referrals/:id          ->  update
+ * DELETE  /api/referrals/:id          ->  destroy
  */
 
 'use strict';
 
 import _ from 'lodash';
 import {
-	Appointment
+	Referral
 } from '../../sqldb';
 import {
 	User
@@ -63,9 +63,9 @@ function handleError(res, statusCode) {
 	};
 }
 
-// Gets a list of Appointments
+// Gets a list of Referrals
 export function index(req, res) {
-	Appointment.findAll({
+	Referral.findAll({
 		where: {
 				isHoliday:false
 			},
@@ -87,10 +87,10 @@ export function index(req, res) {
 		.catch(handleError(res));
 }
 
-// Gets a list of Appointments by docId
+// Gets a list of Referral by docId
 export function byDocID(req, res) {
 	// console.log(req.params.docId);
-	Appointment.findAll({
+	Referral.findAll({
 			where: {
 				physicianId: req.params.docId,
 				isHoliday:false
@@ -113,9 +113,9 @@ export function byDocID(req, res) {
 		.catch(handleError(res));
 }
 
-// Gets a list of Appointments by patientId
+// Gets a list of Referral by patientId
 export function byPatientID(req, res) {
-	Appointment.findAll({
+	Referral.findAll({
 			where: {
 				patientId: req.params.patientId
 			},
@@ -140,7 +140,7 @@ export function byPatientID(req, res) {
 // Gets a list of holidays by docId
 export function holidays(req, res) {
 	// console.log(req.params.docId);
-	Appointment.findAll({
+	Referral.findAll({
 			where: {
 				physicianId: req.params.docId,
 				isHoliday:true
@@ -155,9 +155,9 @@ export function holidays(req, res) {
 		.catch(handleError(res));
 }
 
-// Gets a single Appointment from the DB
+// Gets a single Referral from the DB
 export function show(req, res) {
-	Appointment.find({
+	Referral.find({
 			where: {
 				_id: req.params.id
 			},
@@ -171,19 +171,19 @@ export function show(req, res) {
 		.catch(handleError(res));
 }
 
-// Creates a new Appointment in the DB
+// Creates a new Referral in the DB
 export function create(req, res) {
-	Appointment.create(req.body)
+	Referral.create(req.body)
 		.then(respondWithResult(res, 201))
 		.catch(handleError(res));
 }
 
-// Updates an existing Appointment in the DB
+// Updates an existing Referral in the DB
 export function update(req, res) {
 	if (req.body._id) {
 		delete req.body._id;
 	}
-	Appointment.find({
+	Referral.find({
 			where: {
 				_id: req.params.id
 			}
@@ -194,9 +194,9 @@ export function update(req, res) {
 		.catch(handleError(res));
 }
 
-// Deletes a Appointment from the DB
+// Deletes a Referral from the DB
 export function destroy(req, res) {
-	Appointment.find({
+	Referral.find({
 			where: {
 				_id: req.params.id
 			}

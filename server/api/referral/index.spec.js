@@ -2,12 +2,12 @@
 
 var proxyquire = require('proxyquire').noPreserveCache();
 
-var appointmentCtrlStub = {
-  index: 'appointmentCtrl.index',
-  show: 'appointmentCtrl.show',
-  create: 'appointmentCtrl.create',
-  update: 'appointmentCtrl.update',
-  destroy: 'appointmentCtrl.destroy'
+var referralCtrlStub = {
+  index: 'referralCtrl.index',
+  show: 'referralCtrl.show',
+  create: 'referralCtrl.create',
+  update: 'referralCtrl.update',
+  destroy: 'referralCtrl.destroy'
 };
 
 var routerStub = {
@@ -19,76 +19,76 @@ var routerStub = {
 };
 
 // require the index with our stubbed out modules
-var appointmentIndex = proxyquire('./index.js', {
+var referralIndex = proxyquire('./index.js', {
   'express': {
     Router: function() {
       return routerStub;
     }
   },
-  './appointment.controller': appointmentCtrlStub
+  './referral.controller': referralCtrlStub
 });
 
-describe('Appointment API Router:', function() {
+describe('Referral API Router:', function() {
 
   it('should return an express router instance', function() {
-    appointmentIndex.should.equal(routerStub);
+    referralIndex.should.equal(routerStub);
   });
 
-  describe('GET /api/appointments', function() {
+  describe('GET /api/referrals', function() {
 
-    it('should route to appointment.controller.index', function() {
+    it('should route to referral.controller.index', function() {
       routerStub.get
-        .withArgs('/', 'appointmentCtrl.index')
+        .withArgs('/', 'referralCtrl.index')
         .should.have.been.calledOnce;
     });
 
   });
 
-  describe('GET /api/appointments/:id', function() {
+  describe('GET /api/referrals/:id', function() {
 
-    it('should route to appointment.controller.show', function() {
+    it('should route to referral.controller.show', function() {
       routerStub.get
-        .withArgs('/:id', 'appointmentCtrl.show')
+        .withArgs('/:id', 'referralCtrl.show')
         .should.have.been.calledOnce;
     });
 
   });
 
-  describe('POST /api/appointments', function() {
+  describe('POST /api/referrals', function() {
 
-    it('should route to appointment.controller.create', function() {
+    it('should route to referral.controller.create', function() {
       routerStub.post
-        .withArgs('/', 'appointmentCtrl.create')
+        .withArgs('/', 'referralCtrl.create')
         .should.have.been.calledOnce;
     });
 
   });
 
-  describe('PUT /api/appointments/:id', function() {
+  describe('PUT /api/referrals/:id', function() {
 
-    it('should route to appointment.controller.update', function() {
+    it('should route to referral.controller.update', function() {
       routerStub.put
-        .withArgs('/:id', 'appointmentCtrl.update')
+        .withArgs('/:id', 'referralCtrl.update')
         .should.have.been.calledOnce;
     });
 
   });
 
-  describe('PATCH /api/appointments/:id', function() {
+  describe('PATCH /api/referrals/:id', function() {
 
-    it('should route to appointment.controller.update', function() {
+    it('should route to referral.controller.update', function() {
       routerStub.patch
-        .withArgs('/:id', 'appointmentCtrl.update')
+        .withArgs('/:id', 'referralCtrl.update')
         .should.have.been.calledOnce;
     });
 
   });
 
-  describe('DELETE /api/appointments/:id', function() {
+  describe('DELETE /api/referrals/:id', function() {
 
-    it('should route to appointment.controller.destroy', function() {
+    it('should route to referral.controller.destroy', function() {
       routerStub.delete
-        .withArgs('/:id', 'appointmentCtrl.destroy')
+        .withArgs('/:id', 'referralCtrl.destroy')
         .should.have.been.calledOnce;
     });
 
