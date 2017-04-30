@@ -56,7 +56,7 @@
             </div>
 
             <div class="row" >
-              <div class="input-field col s12">
+              <div class="input-field col s12 practice-select">
                 <i class="mdi-editor-mode-edit prefix"></i>
                 <select name="practice_type" id="practice_type" ng-model="vm.user.practice_type" required>
                         <option value="" disabled selected>Select your practice type</option>
@@ -145,3 +145,17 @@
        });
     </script>
 
+   <script>
+
+$(function(){
+    $('#role').change(function(){
+       var opt = $(this).val();
+        if(opt == 'Practice'){
+            $('.practice-select').show();
+        }else{
+            $('.practice-select').hide();
+        }
+    });
+});
+
+    </script>
