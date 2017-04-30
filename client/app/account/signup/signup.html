@@ -69,6 +69,23 @@
 
             </div>
             </div>
+
+        <div class="row" ng-if="vm.user.role==='practice'"> <div ng-controller="MyCtrl"><div>
+		<select ng-model="selector">
+		<option value=""></option>
+		<option value="">Show everything</option>
+			<option ng-repeat="option in Options" value="{{option.type}}">{{option.type}}</option>
+		</select>
+	</div>
+   <div ng-repeat="option in Options"  ng-show="$parent.selector == option.type || $parent.selector == ''">
+	{{option.type}}
+	<select>
+		<option ng-repeat="choice in option.choices" value="{{choice}}">{{choice}}</option>
+	</select></div>
+</div>
+</div>
+
+
     <div class="row" ng-if="vm.user.role==='physician' || vm.user.role==='practice'">
               <div class="input-field col s6">
                 <i class="mdi-editor-mode-edit prefix"></i>
@@ -134,24 +151,6 @@
           <p class="margin center medium-small sign-up">Already have an account? <a href="/login">Login</a></p>
         </div>
       </div>
-
-
-   <div ng-controller="MyCtrl">
- <div class="row" ng-if="vm.user.role==='practice'">
-		<select ng-model="selector">
-		<option value=""></option>
-		<option value="">Show everything</option>
-			<option ng-repeat="option in Options" value="{{option.type}}">{{option.type}}</option>
-		</select>
-	</div>
-   <div ng-repeat="option in Options"  ng-show="$parent.selector == option.type || $parent.selector == ''">
-	{{option.type}}
-	<select>
-		<option ng-repeat="choice in option.choices" value="{{choice}}">{{choice}}</option>
-	</select>
-	</div>
-</div>
-
 
 
     </div>
