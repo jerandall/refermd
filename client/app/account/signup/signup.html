@@ -135,8 +135,9 @@
         </div>
       </div>
 
+
    <div ng-controller="MyCtrl">
-	<div>
+	<div  ng-if="vm.user.role==='practice'">
 		<select ng-model="selector">
 		<option value=""></option>
 		<option value="">Show everything</option>
