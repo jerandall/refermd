@@ -107,12 +107,20 @@
             </div>
 
              <div class="row" ng-if="vm.user.role==='practice'">
-              <div class="input-field col s6">
+              <div class="row">
+              <div class="input-field col s12">
                 <i class="mdi-editor-mode-edit prefix"></i>
-                <input type="text" name="practice_type" class="form-control" ng-model="vm.user.practice_type" />
-                <label for="practice_type">Practice Type</label>
-              </div>
+                <select name="practice_type" id="practice_type" ng-model="vm.user.practice_type" required>
+                        <option value="" disabled selected>Select your practice type</option>
+                        <option value="chiropractor">Chiropractor</option>
+                        <option value="dentist">Dentist</option>
+                        <option value="cardiologist">Cardiologist</option>
+                      </select>
+                <label>Select Practice Type*</label>
+                <div class="errorTxt1" ng-show="form.role.$error.required && vm.submitted" style="margin-left: 9%;"><div id="uname-error" class="error">Please select a practice type.</div></div>
 
+              </div>
+            </div>
             </div>
 
             <div class="row">

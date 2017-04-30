@@ -52,7 +52,8 @@ module.exports = function(sequelize, DataTypes) {
 		country: DataTypes.STRING,
 		noof_physicians: DataTypes.INTEGER,
 		resetToken: DataTypes.STRING,
-		resetTokenExpires: DataTypes.DATE
+		resetTokenExpires: DataTypes.DATE,
+		practice_type: DataTypes.STRING
 	}, {
 
 		/**

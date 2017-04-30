@@ -211,7 +211,8 @@ export function getPractices(req, res) {
 			'first_name',
 			'last_name',
 			'email',
-			'mobile'
+			'mobile',
+					'practice_type',
 		]
 	})
 		.then(users => {
@@ -431,6 +432,7 @@ export function me(req, res, next) {
 			'zip',
 			'country',
 			'provider',
+			'practice_type',
 			'createdAt'
 		]
 	})
