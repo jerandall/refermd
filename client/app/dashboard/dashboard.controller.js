@@ -8,7 +8,6 @@
 			var vm = this;
 			this.$http = $http;
 			this.awesomeThings = [];
-				this.referrals = [];
 			this.appointments = [];
 			this.slots = [];
 			this.isLoggedIn = Auth.isLoggedIn;

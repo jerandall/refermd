@@ -201,6 +201,26 @@ export function getPatients(req, res) {
 		.catch(handleError(res));
 }
 
+export function getPractices(req, res) {
+	User.findAll({
+		where: {
+			"role": "practice"
+		},
+		attributes: [
+			'_id',
+			'first_name',
+			'last_name',
+			'email',
+			'mobile'
+		]
+	})
+		.then(users => {
+			res.status(200).json(users);
+		})
+		.catch(handleError(res));
+}
+
+
 /**
  * Creates a new user
  */
