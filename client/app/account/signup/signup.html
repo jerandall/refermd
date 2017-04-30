@@ -121,7 +121,16 @@
                 <label>Country</label>
               </div>
             </div>
-<div ng-app="myApp">
+
+               <div class="row">
+              <div class="input-field col s12 m4">
+                <button class="btn btn-inverse col s12" type="submit">Sign up
+          </button>
+              </div>
+            </div>
+          </form>
+
+          <div ng-app="myApp">
   <form name="pForm" ng-controller="pController" class="container-fluid" ng-true-value="1" ng-false-value="0" aria-label="ShowHideAccountant">
     <div class="col-xs-12">
       <label>Area Picker : </label>
@@ -135,13 +144,8 @@
       </md-select>
     </div>
   </form>
-               <div class="row">
-              <div class="input-field col s12 m4">
-                <button class="btn btn-inverse col s12" type="submit">Sign up
-          </button>
-              </div>
-            </div>
-          </form>
+</div>
+
         </div>
         <div class="card-action">
           <!--<input type="submit" class="btn" value="Sign In">-->
@@ -156,7 +160,7 @@
       });
     </script>
 
-      <script>
+     <script>
     var yApp = angular.module('myApp', ['ngMaterial']);
 
 yApp.controller('pController', function($scope) {
@@ -194,4 +198,6 @@ yApp.controller('pController', function($scope) {
   }];
 
 });
-  </script>
+
+    </script>
+
