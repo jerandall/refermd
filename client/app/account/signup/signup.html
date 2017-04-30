@@ -58,12 +58,12 @@
             <div class="row" ng-if="vm.user.role==='practice'">
               <div class="input-field col s12">
                 <i class="mdi-editor-mode-edit prefix"></i>
-                <select name="role" id="role" ng-model="vm.user.practice_type" required>
+                <select2 name="practice_type" id="practice_type" ng-model="vm.user.practice_type" required>
                         <option value="" disabled selected>Select your practice type</option>
                         <option value="chiropractor">Chiropractor</option>
                         <option value="dentist">Dentist</option>
                         <option value="cardiologist">Cardiologist</option>
-                      </select>
+                      </select2>
                 <label>Select Practice Type*</label>
                 <div class="errorTxt1" ng-show="form.practice_type.$error.required && vm.submitted" style="margin-left: 9%;"><div id="uname-error" class="error">Please select a practice type.</div></div>
 
@@ -84,7 +84,7 @@
                 <label for="location">Location</label>
               </div>
             </div>
-            <div class="row" ng-if="vm.user.role==='physician'">
+            <div class="row" ng-if="vm.user.role==='physician' || vm.user.role==='practice'">
               <div class="input-field col s6">
                 <i class="mdi-editor-mode-edit prefix"></i>
                 <input type="text" name="address1" class="form-control" ng-model="vm.user.addresss1" />
@@ -139,5 +139,6 @@
     <script>
       $(document).ready(function() {
         $('select').material_select();
+         $('select2').material_select();
       });
     </script>
