@@ -47,14 +47,14 @@
                         <option value="" disabled selected>Select your profile</option>
                         <option value="patient">Patient</option>
                         <option value="physician">Physician</option>
-                        <option value="Practice">Practice</option>
+                        <option value="practice">Practice</option>
                       </select>
                 <label>Select Role*</label>
                 <div class="errorTxt1" ng-show="form.role.$error.required && vm.submitted" style="margin-left: 9%;"><div id="uname-error" class="error">Please select a role.</div></div>
 
               </div>
             </div>
-            <div class="row" ng-if="vm.user.role==='physician'">
+            <div class="row" ng-if="vm.user.role==='physician' || vm.user.role==='practice'">
               <div class="input-field col s6">
                 <i class="mdi-editor-mode-edit prefix"></i>
                 <input type="text" name="npi" class="form-control" ng-model="vm.user.npi" ng-minlength="10" ng-maxlength="10" required/>
