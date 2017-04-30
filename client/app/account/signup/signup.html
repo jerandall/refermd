@@ -129,23 +129,6 @@
               </div>
             </div>
           </form>
-
-          <div ng-app="myApp">
-  <form name="pForm" ng-controller="pController" class="container-fluid" ng-true-value="1" ng-false-value="0" aria-label="ShowHideAccountant">
-    <div class="col-xs-12">
-      <label>Area Picker : </label>
-      <md-select ng-model="widgetType" aria-label="Select">
-        <md-option ng-value="t.title" data-ng-repeat="t in widget">{{ t.title }}</md-option>
-      </md-select>
-
-      <label>Business Impact : </label>
-      <md-select ng-model="businessImpactType" aria-label="Select">
-        <md-option ng-value="option.name" data-ng-repeat="option in businessImpact">{{option.name}}</md-option>
-      </md-select>
-    </div>
-  </form>
-</div>
-
         </div>
         <div class="card-action">
           <!--<input type="submit" class="btn" value="Sign In">-->
@@ -156,48 +139,5 @@
     <script>
       $(document).ready(function() {
         $('select').material_select();
-
-      });
+       });
     </script>
-
-     <script>
-    var yApp = angular.module('myApp', ['ngMaterial']);
-
-yApp.controller('pController', function($scope) {
-  $scope.widget = [{
-    "id": "line",
-    "title": "Line"
-  }, {
-    "id": "spline",
-    "title": "Smooth line"
-  }, {
-    "id": "area",
-    "title": "Area"
-  }, {
-    "id": "areaspline",
-    "title": "Smooth area"
-  }];
-
-  //init
-  $scope.widgetType = 'Line';
-
-  $scope.businessImpactType = 'CAMERA';
-
-  $scope.businessImpact = [{
-    "id": "CAMERA",
-    "name": "CAMERA"
-  }, {
-    "id": "smline",
-    "name": "Smooth line"
-  }, {
-    "id": "barea",
-    "name": "Area"
-  }, {
-    "id": "bareaspline",
-    "name": "Smooth area"
-  }];
-
-});
-
-    </script>
-
