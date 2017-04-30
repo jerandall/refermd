@@ -33,7 +33,8 @@ class SignupController {
         addresss2: this.user.addresss2,
         state: this.user.state,
         zip: this.user.zip,
-        country: this.user.country
+        country: this.user.country,
+         practice_type: this.user.practice_type
       })
         .then(() => {
           // Account created, redirect to home
