@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col s12 m5 offset-m4">
-      <div class="card">
+      <div ng-app="myApp" ng-controller="MyCtrl" class="card">
         <div class="card-content" >
           <form class="form" name="form" ng-submit="vm.register(form)" novalidate>
             <div class="row">
@@ -55,15 +55,15 @@
               </div>
             </div>
 
-            <div class="row" ng-if="vm.user.role==='practice'">
+            <div class="row" ng-if="vm.user.role=='practice'">
               <div class="input-field col s12">
                 <i class="mdi-editor-mode-edit prefix"></i>
-                <md-select name="practice_type" id="practice_type" ng-model="vm.user.practice_type" required>
+                <select name="practice_type" id="practice_type" ng-model="vm.user.practice_type" required>
                         <option value="" disabled selected>Select your practice type</option>
                         <option value="chiropractor">Chiropractor</option>
                         <option value="dentist">Dentist</option>
                         <option value="cardiologist">Cardiologist</option>
-                      </md-select>
+                      </select>
                 <label>Select Practice Type*</label>
                 <div class="errorTxt1" ng-show="form.practice_type.$error.required && vm.submitted" style="margin-left: 9%;"><div id="uname-error" class="error">Please select a practice type.</div></div>
 
@@ -138,14 +138,11 @@
 
     </div>
     <script>
+    var myApp = angular.module('myApp',[]);
+
       $(document).ready(function() {
         $('select').material_select();
 
        });
     </script>
-      <script>
-      $(document).ready(function() {
-        $('md-select').material_select();
 
-       });
-    </script>
