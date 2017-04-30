@@ -3,7 +3,7 @@
 
 angular.module('eventx.constants', [])
 
-.constant('appConfig', {userRoles:['patient','user','admin','physician']})
+.constant('appConfig', {userRoles:['patient','user','admin','physician', 'practice']})
 
 ;
 })(angular);
