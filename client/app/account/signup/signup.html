@@ -147,8 +147,8 @@
 
    <script>
 
-
-    $('#role').change(function(){
+$(function(){
+    $('select').change(function(){
        var opt = $(this).val();
         if(opt == 'practice'){
             $('.practice-select').show();
@@ -156,6 +156,7 @@
             $('.practice-select').hide();
         }
     });
+});
     </script>
  <style>
 .practice-select { display: none; }
