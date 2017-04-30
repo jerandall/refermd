@@ -80,7 +80,7 @@
                 <label for="address2">address2</label>
               </div>
             </div>
-            <div class="row" ng-if="vm.user.role==='physician'">
+            <div class="row" ng-if="vm.user.role==='physician' || vm.user.role==='practice'">
               <div class="input-field col s6">
                 <i class="mdi-editor-mode-edit prefix"></i>
                 <input type="text" name="city" class="form-control" ng-model="vm.user.city" />
@@ -93,7 +93,7 @@
               </div>
             </div>
 
-            <div class="row" ng-if="vm.user.role==='physician'">
+            <div class="row" ng-if="vm.user.role==='physician' || vm.user.role==='practice'">
               <div class="input-field col s6">
                 <i class="mdi-editor-mode-edit prefix"></i>
                 <input type="text" name="state" class="form-control" ng-model="vm.user.state" />
@@ -104,6 +104,15 @@
                 <input type="text" name="country" class="form-control" ng-model="vm.user.country" />
                 <label>Country</label>
               </div>
+            </div>
+
+             <div class="row" ng-if="vm.user.role==='practice'">
+              <div class="input-field col s6">
+                <i class="mdi-editor-mode-edit prefix"></i>
+                <input type="text" name="practice_type" class="form-control" ng-model="vm.user.practice_type" />
+                <label for="practice_type">Practice Type</label>
+              </div>
+
             </div>
 
             <div class="row">
