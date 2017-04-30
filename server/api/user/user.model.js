@@ -55,8 +55,8 @@ module.exports = function(sequelize, DataTypes) {
 		resetTokenExpires: DataTypes.DATE,
 			practice_type: {
 			type: DataTypes.STRING,
-			defaultValue: 'null'
-
+			defaultValue: ' '
+	}
 			}, {
 
 		/**
