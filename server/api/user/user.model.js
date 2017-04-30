@@ -53,8 +53,11 @@ module.exports = function(sequelize, DataTypes) {
 		noof_physicians: DataTypes.INTEGER,
 		resetToken: DataTypes.STRING,
 		resetTokenExpires: DataTypes.DATE,
-		practice_type: DataTypes.STRING
-	}, {
+			practice_type: {
+			type: DataTypes.STRING,
+			defaultValue: 'null'
+
+			}, {
 
 		/**
 		 * Virtual Getters
