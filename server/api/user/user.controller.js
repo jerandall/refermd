@@ -104,7 +104,7 @@ export function index(req, res) {
 export function getPhysicians(req, res) {
 	User.findAll({
 		where: {
-			"role": "physician"
+			"role": "practice"
 		},
 		attributes: [
 			'_id',
@@ -125,7 +125,7 @@ export function getPhysicians(req, res) {
 export function getPhysiciansData(req, res) {
 	User.findAll({
 		where: {
-			"role": "physician"
+			"role": "practice"
 		},
 		attributes: [
 			'_id',
