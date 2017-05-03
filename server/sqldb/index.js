@@ -70,5 +70,4 @@ db.Appointment.belongsTo(db.User, {
 });
 // Relationship ends
 
-
 export default db;
