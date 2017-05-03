@@ -9,9 +9,6 @@ import jwt from 'jsonwebtoken';
 import {
 	Appointment
 } from '../../sqldb';
-import {
-	Referral
-} from '../../sqldb';
 
 import async from 'async';
 import crypto from 'crypto';
@@ -107,7 +104,7 @@ export function index(req, res) {
 export function getPhysicians(req, res) {
 	User.findAll({
 		where: {
-			"role": "physician"
+			"role": "practice"
 		},
 		attributes: [
 			'_id',
@@ -128,7 +125,7 @@ export function getPhysicians(req, res) {
 export function getPhysiciansData(req, res) {
 	User.findAll({
 		where: {
-			"role": "physician"
+			"role": "practice"
 		},
 		attributes: [
 			'_id',
@@ -140,35 +137,6 @@ export function getPhysiciansData(req, res) {
 		],
 		include: [{
 			model: Appointment,
-			attributes: ['title', 'start', 'end', '_id'],
-			include: [{
-				model: User,
-				as: 'Patient',
-				attributes: ['first_name', 'last_name', 'email', 'mobile', 'gender', '_id']
-			}]
-		}]
-	})
-		.then(users => {
-			res.status(200).json(users);
-		})
-		.catch(handleError(res));
-}
-
-export function getPhysiciansData(req, res) {
-	User.findAll({
-		where: {
-			"role": "physician"
-		},
-		attributes: [
-			'_id',
-			'first_name',
-			'last_name',
-			'email',
-			'npi',
-			'mobile'
-		],
-		include: [{
-			model: Referral,
 			attributes: ['title', 'start', 'end', '_id'],
 			include: [{
 				model: User,
@@ -200,27 +168,6 @@ export function getPatients(req, res) {
 		})
 		.catch(handleError(res));
 }
-
-export function getPractices(req, res) {
-	User.findAll({
-		where: {
-			"role": "practice"
-		},
-		attributes: [
-			'_id',
-			'first_name',
-			'last_name',
-			'email',
-			'mobile',
-					'practice_type',
-		]
-	})
-		.then(users => {
-			res.status(200).json(users);
-		})
-		.catch(handleError(res));
-}
-
 
 /**
  * Creates a new user
@@ -432,7 +379,6 @@ export function me(req, res, next) {
 			'zip',
 			'country',
 			'provider',
-			'practice_type',
 			'createdAt'
 		]
 	})
