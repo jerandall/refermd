@@ -11,12 +11,9 @@ var router = new Router();
 router.get('/', auth.hasRole('admin'), controller.index);
 router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);
-//router.get('/practices', auth.isAuthenticated(), controller.getPractices);
-//router.get('/practices/all', auth.isAuthenticated(), controller.getPracticesData);
 router.get('/physicians', auth.isAuthenticated(), controller.getPhysicians);
 router.get('/physicians/all', auth.isAuthenticated(), controller.getPhysiciansData);
 router.get('/patients', auth.isAuthenticated(), controller.getPatients);
-
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.put('/forgot', controller.forgotPassword);
 router.put('/reset/:token', controller.resetPassword);
