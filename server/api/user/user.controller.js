@@ -101,7 +101,7 @@ export function index(req, res) {
 		.catch(handleError(res));
 }
 
-export function getPractices(req, res) {
+//export function getPractices(req, res) {
 	User.findAll({
 		where: {
 			"role": "practice"
@@ -123,7 +123,7 @@ export function getPractices(req, res) {
 		.catch(handleError(res));
 }
 
-export function getPracticesData(req, res) {
+//export function getPracticesData(req, res) {
 	User.findAll({
 		where: {
 			"role": "practice"
@@ -141,7 +141,7 @@ export function getPracticesData(req, res) {
 			attributes: ['title', 'start', 'end', '_id'],
 			include: [{
 				model: User,
-				as: 'Physician',
+				as: 'Patient',
 				attributes: ['first_name', 'last_name', 'email', 'mobile', 'gender', '_id']
 			}]
 		}]

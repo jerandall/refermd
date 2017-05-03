@@ -31,22 +31,7 @@
 				}
 
 			},
-			getPractices: {
-				method: 'GET',
-				params: {
-					id: 'practices'
-				},
-				isArray: true
-			},
-			getPracticesData: {
-				url: '/api/users/practices/all',
-				method: 'GET',
-				// params: {
-				// 	id: 'physicians',
-				// 	controller: 'all'
-				// },
-				isArray: true
-			},
+
 			getPhysicians: {
 				method: 'GET',
 				params: {
