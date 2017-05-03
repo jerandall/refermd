@@ -50,6 +50,7 @@ module.exports = function(sequelize, DataTypes) {
 		state: DataTypes.STRING,
 		zip: DataTypes.STRING,
 		country: DataTypes.STRING,
+				practice_type: DataTypes.STRING,
 		noof_physicians: DataTypes.INTEGER,
 		resetToken: DataTypes.STRING,
 		resetTokenExpires: DataTypes.DATE
