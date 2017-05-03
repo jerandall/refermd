@@ -14,6 +14,7 @@ router.get('/me', auth.isAuthenticated(), controller.me);
 router.get('/physicians', auth.isAuthenticated(), controller.getPhysicians);
 router.get('/physicians/all', auth.isAuthenticated(), controller.getPhysiciansData);
 router.get('/patients', auth.isAuthenticated(), controller.getPatients);
+
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.put('/forgot', controller.forgotPassword);
 router.put('/reset/:token', controller.resetPassword);

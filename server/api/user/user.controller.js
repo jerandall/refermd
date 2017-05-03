@@ -101,7 +101,6 @@ export function index(req, res) {
 		.catch(handleError(res));
 }
 
-
 export function getPhysicians(req, res) {
 	User.findAll({
 		where: {
@@ -122,6 +121,7 @@ export function getPhysicians(req, res) {
 		})
 		.catch(handleError(res));
 }
+
 export function getPhysiciansData(req, res) {
 	User.findAll({
 		where: {
