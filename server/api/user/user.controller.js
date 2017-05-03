@@ -101,6 +101,57 @@ export function index(req, res) {
 		.catch(handleError(res));
 }
 
+export function getPractices(req, res) {
+	User.findAll({
+		where: {
+			"role": "practice"
+		},
+		attributes: [
+			'_id',
+			'first_name',
+			'last_name',
+			'email',
+			'role',
+			'npi',
+			'provider',
+				'practice_type'
+		]
+	})
+		.then(users => {
+			res.status(200).json(users);
+		})
+		.catch(handleError(res));
+}
+
+export function getPracticesData(req, res) {
+	User.findAll({
+		where: {
+			"role": "practice"
+		},
+		attributes: [
+			'_id',
+			'first_name',
+			'last_name',
+			'email',
+			'npi',
+			'mobile'
+		],
+		include: [{
+			model: Appointment,
+			attributes: ['title', 'start', 'end', '_id'],
+			include: [{
+				model: User,
+				as: 'Patient',
+				attributes: ['first_name', 'last_name', 'email', 'mobile', 'gender', '_id']
+			}]
+		}]
+	})
+		.then(users => {
+			res.status(200).json(users);
+		})
+		.catch(handleError(res));
+}
+
 export function getPhysicians(req, res) {
 	User.findAll({
 		where: {
@@ -121,7 +172,6 @@ export function getPhysicians(req, res) {
 		})
 		.catch(handleError(res));
 }
-
 export function getPhysiciansData(req, res) {
 	User.findAll({
 		where: {
