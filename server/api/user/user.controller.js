@@ -141,7 +141,7 @@ export function getPracticesData(req, res) {
 			attributes: ['title', 'start', 'end', '_id'],
 			include: [{
 				model: User,
-				as: 'Patient',
+				as: 'Physician',
 				attributes: ['first_name', 'last_name', 'email', 'mobile', 'gender', '_id']
 			}]
 		}]
