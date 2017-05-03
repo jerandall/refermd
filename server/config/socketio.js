@@ -17,7 +17,7 @@ function onConnect(socket) {
 
 	// Insert sockets below
 require('../api/patient/patient.socket').register(socket);
-require('../api/practice/practice.socket').register(socket);
+
 require('../api/shifts/shifts.socket').register(socket);
 	require('../api/appointment/appointment.socket').register(socket);
 
