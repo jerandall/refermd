@@ -29,9 +29,7 @@
 				params: {
 					id: 'me'
 				}
-
 			},
-
 			getPhysicians: {
 				method: 'GET',
 				params: {
@@ -48,7 +46,6 @@
 				// },
 				isArray: true
 			},
-
 			setBusinesshours: {
 				url: 'api/settings/',
 				method: 'POST'
@@ -59,9 +56,8 @@
 					id: 'patients'
 				},
 				isArray: true
-
 			},
-
+			
 		});
 	}
 
