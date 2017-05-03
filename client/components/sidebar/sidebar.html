@@ -27,8 +27,7 @@
             </li>
             <li class="bold" ng-class="{active:$state.current.name === 'main'}"><a ui-sref="main" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calendar</a>
             </li>
-            <li class="bold" ng-class="{active:$state.current.name === 'referral'}"><a ui-sref="referral" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Referrals</a>
-            </li>
+
              <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Appointments</a>
             </li>
             <li class="bold" ng-class="{active:$state.current.name === 'patient'}" ng-if="side.isAdmin() || side.getCurrentUser().role==='physician'"><a ui-sref="patient" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Patients</a>
