@@ -36,6 +36,9 @@
             <li class="bold" ng-if="side.getCurrentUser().role==='admin'" ng-class="{active:$state.current.name === 'physician'}"><a ui-sref="physician" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Physicians</a>
             </li>
 
+                <li class="bold" ng-if="side.getCurrentUser().role==='admin'" ng-class="{active:$state.current.name === 'practice'}"><a ui-sref="practice" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Practices</a>
+            </li>
+
             <li class="bold" ng-if="side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'shifts'}"><a ui-sref="shifts" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Shifts</a>
             </li>
             <li class="bold" ng-if="side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'holidays'}"><a ui-sref="holidays" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Holidays</a>
