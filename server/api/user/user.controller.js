@@ -12,7 +12,6 @@ import {
 import {
 	Referral
 } from '../../sqldb';
-
 import async from 'async';
 import crypto from 'crypto';
 
@@ -138,9 +137,6 @@ export function getPhysiciansData(req, res) {
 			'npi',
 			'mobile'
 		],
-		include: [{
-			model: Referral,
-			attributes: ['title', 'start', 'end', '_id'],
 		include: [{
 			model: Appointment,
 			attributes: ['title', 'start', 'end', '_id'],
