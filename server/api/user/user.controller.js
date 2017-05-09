@@ -9,7 +9,6 @@ import jwt from 'jsonwebtoken';
 import {
 	Appointment
 } from '../../sqldb';
-
 import {
 	Referral
 } from '../../sqldb';
