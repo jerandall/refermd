@@ -3,7 +3,7 @@
 (function() {
 
 class AdminController {
-  constructor(User, AppointmentService,ReferralService, Auth,socket) {
+  constructor(User, AppointmentService, Auth,socket) {
     var vm = this;
     vm.getCurrentUser = Auth.getCurrentUser;
     vm.appointments = [];
