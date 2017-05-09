@@ -58,13 +58,6 @@
 				},
 				isArray: true
 			},
-			getPractices: {
-				method: 'GET',
-				params: {
-					id: 'practices'
-				},
-				isArray: true
-			},
 
 		});
 	}
