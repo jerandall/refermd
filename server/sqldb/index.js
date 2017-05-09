@@ -18,11 +18,10 @@ var db = {
 
 // Insert models below
 db.Patient = db.sequelize.import('../api/patient/patient.model');
-db.Practice = db.sequelize.import('../api/practice/practice.model');
+
 
 db.Shifts = db.sequelize.import('../api/shifts/shifts.model');
 db.Appointment = db.sequelize.import('../api/appointment/appointment.model');
-db.Referral = db.sequelize.import('../api/referral/referral.model');
 
 db.User = db.sequelize.import('../api/user/user.model');
 
