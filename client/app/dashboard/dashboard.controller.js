@@ -4,11 +4,12 @@
 
 	class DashboardController {
 
-		constructor($http, $scope, $rootScope, $state, $compile, $timeout, socket, Auth, AppointmentService, User, Shifts) {
+		constructor($http, $scope, $rootScope, $state, $compile, $timeout, socket, Auth, AppointmentService, ReferralService, User, Shifts) {
 			var vm = this;
 			this.$http = $http;
 			this.awesomeThings = [];
 			this.appointments = [];
+				this.referrals = [];
 			this.slots = [];
 			this.isLoggedIn = Auth.isLoggedIn;
 			this.isAdmin = Auth.isAdmin;
