@@ -4,11 +4,11 @@
 
 	class MainController {
 
-		constructor($http, $scope, $compile, $timeout, socket, Auth, AppointmentService, User, Shifts, Holidays) {
+		constructor($http, $scope, $compile, $timeout, socket, Auth, ReferralService, User, Shifts, Holidays) {
 			var vm = this;
 			this.$http = $http;
 			this.awesomeThings = [];
-			this.appointments = [];
+			this.referrals = [];
 
 			this.isLoggedIn = Auth.isLoggedIn;
 			this.isAdmin = Auth.isAdmin;
@@ -54,11 +54,11 @@
 
 
 			function getPhysician(physicianId) {
-				AppointmentService.byDocId.query({
+				ReferralService.byDocId.query({
 					docId: physicianId
 				}).$promise.then(function (response) {
-					$scope.appointments = response;
-					socket.syncUpdates('appointment', $scope.appointments);
+					$scope.referrals = response;
+					socket.syncUpdates('appointment', $scope.referrals);
 				});
 			}
 
@@ -153,7 +153,7 @@
 
 				var d = new Date();
 				var datestring = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear();
-				var exportURL = '/api/export/appointments_' + datestring;
+				var exportURL = '/api/export/referrals' + datestring;
 				angular.element('#frmSubmit').attr('action', exportURL);
 				angular.element('#data').val(JSON.stringify(dataToExport));
 				angular.element('#frmSubmit').submit();
