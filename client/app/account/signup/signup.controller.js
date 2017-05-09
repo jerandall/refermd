@@ -38,7 +38,7 @@ class SignupController {
       })
         .then(() => {
           // Account created, redirect to home
-          if (this.user.role && (this.user.role === "physician" || this.user.role === "admin" || this.user.role === "practice")) {
+          if (this.user.role && (this.user.role === "physician" || this.user.role === "admin")) {
             this.$state.go('dashboard');
           }
           else {
