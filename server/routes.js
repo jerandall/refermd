@@ -13,6 +13,7 @@ app.use('/api/patients', require('./api/patient'));
 
 	app.use('/api/shifts', require('./api/shifts'));
 	app.use('/api/appointments', require('./api/appointment'));
+		app.use('/api/referrals', require('./api/referral'));
 
  	app.use('/api/users', require('./api/user'));
 	app.use('/api/export', require('./service'));
