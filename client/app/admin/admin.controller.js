@@ -3,10 +3,11 @@
 (function() {
 
 class AdminController {
-  constructor(User, AppointmentService, Auth,socket) {
+  constructor(User, AppointmentService,ReferralService, Auth,socket) {
     var vm = this;
     vm.getCurrentUser = Auth.getCurrentUser;
     vm.appointments = [];
+     vm.referrals = [];
     vm.user = vm.getCurrentUser();
     console.log(vm.getCurrentUser())
     AppointmentService.byDocId.query({

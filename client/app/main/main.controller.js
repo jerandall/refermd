@@ -55,11 +55,11 @@
 
 
 			function getPhysician(physicianId) {
-				ReferralService.byDocId.query({
+				AppointmentService.byDocId.query({
 					docId: physicianId
 				}).$promise.then(function (response) {
-					$scope.referrals = response;
-					socket.syncUpdates('referral', $scope.referrals);
+					$scope.appointments = response;
+					socket.syncUpdates('appointment', $scope.appointments);
 				});
 			}
 
