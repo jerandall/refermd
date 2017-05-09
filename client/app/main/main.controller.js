@@ -4,12 +4,11 @@
 
 	class MainController {
 
-		constructor($http, $scope, $compile, $timeout, socket, Auth, AppointmentService, ReferralService, User, Shifts, Holidays) {
+		constructor($http, $scope, $compile, $timeout, socket, Auth, AppointmentService, User, Shifts, Holidays) {
 			var vm = this;
 			this.$http = $http;
 			this.awesomeThings = [];
 			this.appointments = [];
-				this.referrals = [];
 
 			this.isLoggedIn = Auth.isLoggedIn;
 			this.isAdmin = Auth.isAdmin;
