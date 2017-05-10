@@ -16,7 +16,7 @@
 			$rootScope.$state = $state;
 
 			$scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-			$scope.series = ['Patients', 'Month'];
+			$scope.series = ['Referrals', 'Month'];
 			$scope.chartOptions = {scaleFontColor: "#555", animation: true,responsive:true};
 			$scope.colours = [
 				{ // grey

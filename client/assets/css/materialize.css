@@ -3403,7 +3403,7 @@ span.badge.new {
 }
 
 span.badge.new:after {
-  content: " new";
+  content: " completed";
 }
 
 nav ul a span.badge {
