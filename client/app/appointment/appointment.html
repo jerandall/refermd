@@ -44,7 +44,7 @@
     </div>
   </div>
 </div>
-<div class="row box-one" ng-show="app.defaultMode==='list'">
+<div class="row box-one" ng-show="app.defaultMode==='card'">
   <div class="col s12 m6 l3" ng-repeat="appointment in app.appointments |orderBy: appointment.start:true | pagination: app.curPage * app.pageSize | limitTo: app.pageSize | daterange:app.startDate:app.endDate">
     <div class="card" ng-class="appointment.className">
       <div class="row">

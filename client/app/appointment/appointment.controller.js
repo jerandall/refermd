@@ -11,7 +11,7 @@
       this.AppointmentService = AppointmentService;
       $rootScope.$state = $state;
       this.getCurrentUser = Auth.getCurrentUser;
-      this.defaultMode = 'card'
+      this.defaultMode = 'list'
       this.curPage = 0;
       this.pageSize = 12;
       vm.noRecords=false;
