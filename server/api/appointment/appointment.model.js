@@ -30,8 +30,8 @@ export default function(sequelize, DataTypes) {
 			},
 			status:{
 				type:   DataTypes.ENUM,
-				values: ['Awaiting', 'Cancel', 'Done'],
-				defaultValue: 'Awaiting',
+			values: ['Pending', 'Scheduled', 'Received', 'Completed'],
+				defaultValue: 'Received',
 				allowNull: false
 			}
 		}, {
