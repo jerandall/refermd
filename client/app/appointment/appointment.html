@@ -118,7 +118,7 @@
             <td>{{appointment.start | UTCToNow}}</td>
             <td>{{appointment.end | UTCToNow}}</td>
 
-            <td ng-class="{'orange-text': appointment.status==='Awaiting', 'red-text': appointment.status==='Cancel','green-text': appointment.status==='Done'}">
+            <td ng-class="{'orange-text': appointment.status==='Pending', 'red-text': appointment.status==='Recieved' ,'blue-text': appointment.status==='Closed','green-text': appointment.status==='Scheduled'}">
               <div input-field>
                 <select ng-model="appointment.status" material-select watch ng-change="app.setAppointmentStatus(appointment)">
                       <option   ng-repeat="value in app.appointmentStatus">{{value}}</option>
