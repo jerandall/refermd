@@ -17,7 +17,7 @@
 
 			$scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
 			$scope.series = ['Patients', 'Month'];
-			$scope.chartOptions = {scaleFontColor: "#fff", animation: true,responsive:true};
+			$scope.chartOptions = {scaleFontColor: "#555", animation: true,responsive:true};
 			$scope.colours = [
 				{ // grey
 					fillColor: 'rgba(148,159,177,0.2)',
