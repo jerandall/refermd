@@ -7,7 +7,6 @@ class AdminController {
     var vm = this;
     vm.getCurrentUser = Auth.getCurrentUser;
     vm.appointments = [];
-     vm.referrals = [];
     vm.user = vm.getCurrentUser();
     console.log(vm.getCurrentUser())
     AppointmentService.byDocId.query({
