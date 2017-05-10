@@ -41,7 +41,7 @@
             </li>
             <li class="bold" ng-if="side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'shifts'}"><a ui-sref="shifts" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Reports</a>
             </li>
-            <li class="bold" ng-if="side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'holidays'}"><a ui-sref="holidays" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Account Management</a>
+            <li class="bold" ng-if="side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'holidays'}"><a ui-sref="settings" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Account Management</a>
             </li>
             <li class="bold"  ng-class="{active:$state.current.name === 'guide'}"><a ui-sref="guide" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Support</a>
             </li>
