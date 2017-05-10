@@ -29,8 +29,8 @@
 
       vm.getCurrentUser(function (user) {
         vm.currentUser = user;
-        vm.appointmentStatus = ['Awaiting', 'Cancel', 'Done'];
-        // get app the appointments of logged users - physician/patient        
+        vm.appointmentStatus = ['Completed', 'Scheduled', 'Pending' , 'Received'];
+        // get app the appointments of logged users - physician/patient
         if (vm.currentUser.role === 'patient') {
           AppointmentService.byPatientID.query({
             patientId: vm.currentUser._id
@@ -138,5 +138,5 @@
         return filteredResult;
       }
     });
-  
+
 })();
