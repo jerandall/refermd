@@ -25,22 +25,18 @@
             </li>
             <li class="bold" ng-if="side.isAdmin() || side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'dashboard'}"><a ui-sref="dashboard" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Dashboard</a>
             </li>
-            <li class="bold" ng-class="{active:$state.current.name === 'main'}"><a ui-sref="main" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Referral Management</a>
+
+             <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Referral Management</a>
             </li>
-
-             <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Appointments</a>
-            </li>
-
-             <li class="bold" ng-class="{active:$state.current.name === 'referral'}"><a ui-sref="referral" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Referrals</a>
-            </li>
-
-
 
             <li class="bold" ng-if="side.getCurrentUser().role==='admin'" ng-class="{active:$state.current.name === 'physician'}"><a ui-sref="physician" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Providers</a>
             </li>
 
             <li class="bold" ng-class="{active:$state.current.name === 'patient'}" ng-if="side.isAdmin() || side.getCurrentUser().role==='physician'"><a ui-sref="patient" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Patients</a>
             </li>
+                        <li class="bold" ng-class="{active:$state.current.name === 'main'}"><a ui-sref="main" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calendar</a>
+            </li>
+
              <li class="bold" ng-if="side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'shifts'}"><a ui-sref="shifts" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Notifications</a>
             </li>
             <li class="bold" ng-if="side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'shifts'}"><a ui-sref="shifts" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Reports</a>
