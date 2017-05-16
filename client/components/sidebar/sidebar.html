@@ -29,7 +29,11 @@
             <!--    <li class="bold"  ng-if="side.isAdmin() || side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'dashboard'}"><a ui-sref="dashboard" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Dashboard</a>
             </li>-->
 
-             <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class=" collapsible-header waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Referral Management</a>
+             <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class=" waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Referral Management</a>
+            </li>
+
+
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Referral Management2</a>
               <div class="collapsible-body">
                 <ul>
                   <li><a href="color.html">Color</a></li>
@@ -38,6 +42,7 @@
                 </ul>
               </div>
             </li>
+
 
             <li class="bold" ng-if="side.getCurrentUser().role==='admin'" ng-class="{active:$state.current.name === 'physician'}"><a ui-sref="physician" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Providers</a>
             </li>
