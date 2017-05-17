@@ -15,20 +15,6 @@ class AddReferralController {
     }
   }
 
-  changePassword(form) {
-    this.submittedPasswordform = true;
-    if (form.$valid) {
-      this.Auth.changePassword(this.user.oldPassword, this.user.newPassword)
-        .then((res) => {
-          Materialize.toast(res.data || "Password successfully changed.", 2000, '', function () { });
-          this.submittedPasswordform = false;
-          this.user = {};
-        })
-        .catch((res) => {
-          Materialize.toast(res.data || "Incorrect Password.", 2000, '', function () { });
-        });
-    }
-  }
 
   updateProfile(form) {
     this.submittedProfileform = true;
