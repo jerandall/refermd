@@ -29,37 +29,18 @@
             <!--    <li class="bold"  ng-if="side.isAdmin() || side.getCurrentUser().role==='physician'" ng-class="{active:$state.current.name === 'dashboard'}"><a ui-sref="dashboard" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Dashboard</a>
             </li>-->
 
-             <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class=" waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Referral Management</a>
-            </li>
-
-
             <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Referral Management2</a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="color.html">Color</a></li>
-                  <li><a href="grid.html">Grid</a></li>
-                  <li><a href="helpers.html">Helpers</a></li>
+                    <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class=" waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Incoming</a>
+            </li>
+                  <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class=" waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Outgoing</a>
+            </li>
+                 <li class="bold" ng-class="{active:$state.current.name === 'appointment'}"><a ui-sref="appointment" class=" waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Create New Referral</a>
+            </li>
                 </ul>
               </div>
             </li>
-<li><a href="#!">First Sidebar Link</a></li>
-      <li><a href="#!">Second Sidebar Link</a></li>
-      <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Dropdown<i class="mdi-navigation-arrow-drop-down"></i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#!">First</a></li>
-                <li><a href="#!">Second</a></li>
-                <li><a href="#!">Third</a></li>
-                <li><a href="#!">Fourth</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
-
             <li class="bold" ng-if="side.getCurrentUser().role==='admin'" ng-class="{active:$state.current.name === 'physician'}"><a ui-sref="physician" class="waves-effect waves-cyan"><i class="mdi-action-note-add"></i> Providers</a>
             </li>
 
