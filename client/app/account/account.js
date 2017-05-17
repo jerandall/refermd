@@ -35,6 +35,13 @@ angular.module('eventx')
 				controllerAs: 'vm',
 				authenticate: true
 			})
+			.state('addreferral', {
+				url: '/addreferral',
+				templateUrl: 'app/addreferral.html',
+				controller: 'SettingsController',
+				controllerAs: 'vm',
+				authenticate: true
+			})
 			.state('shifts', {
 				url: '/shifts',
 				templateUrl: 'app/account/shifts/shifts.html',
@@ -49,7 +56,7 @@ angular.module('eventx')
 				controllerAs: 'vm',
 				authenticate: 'physician'
 			})
-			
+
 			.state('forget', {
 				url: '/forget',
 				templateUrl: 'app/account/forget/forget.html',

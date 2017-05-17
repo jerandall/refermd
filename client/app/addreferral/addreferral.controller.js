@@ -1,6 +1,6 @@
 'use strict';
 
-class AddReferralsController {
+class AddReferralController {
   constructor(Auth, User, $cookies, $location) {
     this.errors = {};
     this.submittedPasswordform = false;
@@ -63,4 +63,4 @@ class AddReferralsController {
 }
 
 angular.module('eventx')
-  .controller('AddReferralsController', AddReferralsController);
+  .controller('AddReferralController', AddReferralController);
