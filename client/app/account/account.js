@@ -38,7 +38,7 @@ angular.module('eventx')
 			.state('addreferral', {
 				url: '/addreferral',
 				templateUrl: 'app/addreferral.html',
-				controller: 'SettingsController',
+				controller: 'AddReferralController',
 				controllerAs: 'vm',
 				authenticate: true
 			})
